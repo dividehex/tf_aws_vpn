@@ -1,19 +1,3 @@
-output "VPC" {
-    value = "${aws_vpc.vpc.id}"
-}
-
-output "Private subnets" {
-    value = "${join(",", aws_subnet.private.*.id)}"
-}
-
-output "Public subnets" {
-    value = "${join(",", aws_subnet.public.*.id)}"
-}
-
-output "Internet gateway" {
-    value = "${aws_internet_gateway.vpc-igw.id}"
-}
-
 output "Customer gateway" {
     value = "${aws_customer_gateway.vpc-cgw.id}"
 }

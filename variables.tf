@@ -7,28 +7,12 @@ variable "vpn_ip_address" {
 variable "vpn_dest_cidr_block" {
     description = "Internal network IP range to advertise over the VPN connection to the VPC."
 }
+variable "vpc_id" {
+    description = "The VPC id the VPN will be attached to"
+}
+variable "main_route_table_id" {
+    description = "The main route table used by the VPN"
+}
 variable "name" {
     description = "The name of the VPC."
-}
-variable "cidr_block" {
-    description = "The CIDR block for the VPC."
-}
-variable "zones" {
-    description = "List of availability zones to use."
-}
-variable "public_subnets" {
-    description = "List of CIDR blocks to use as public subnets; instances launced will be assigned a public IP address."
-    default = ""
-}
-variable "private_subnets" {
-    description = "List of CIDR blocks to use as private subnets; instances launced will NOT be assigned a public IP address."
-    default = ""
-}
-variable "enable_dns_hostnames" {
-    description = "Enable DNS hostnames in the VPC (default false)."
-    default = false
-}
-variable "enable_dns_support" {
-    description = "Enable DNS support in the VPC (default true)."
-    default = true
 }
